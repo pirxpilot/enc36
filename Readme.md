@@ -22,13 +22,13 @@ enc36('Rainbow');
 
 ## License
 
-MIT © [Damian Krzeminski](https://code42day.com)
+MIT © [Damian Krzeminski](https://pirxpilot.me)
 
 [npm-image]: https://img.shields.io/npm/v/enc36.svg
 [npm-url]: https://npmjs.org/package/enc36
 
-[travis-url]: https://travis-ci.org/code42day/enc36
-[travis-image]: https://img.shields.io/travis/code42day/enc36.svg
+[travis-url]: https://travis-ci.org/pirxpilot/enc36
+[travis-image]: https://img.shields.io/travis/pirxpilot/enc36.svg
 
-[gemnasium-image]: https://img.shields.io/gemnasium/code42day/enc36.svg
-[gemnasium-url]: https://gemnasium.com/code42day/enc36
+[gemnasium-image]: https://img.shields.io/gemnasium/pirxpilot/enc36.svg
+[gemnasium-url]: https://gemnasium.com/pirxpilot/enc36
