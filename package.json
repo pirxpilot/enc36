@@ -7,7 +7,7 @@
     "email": "pirxpilot@code42day.com",
     "url": "https://code42day.com"
   },
-  "repository": "code42day/enc36",
+  "repository": "github:pirxpilot/enc36",
   "license": "MIT",
   "keywords": [
     "enc36",
@@ -18,15 +18,13 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "jshint": "^2.9.3",
-    "mocha": "^3.0.2",
-    "should": "^11.1.0"
+    "@pirxpilot/jshint": "~3",
+    "should": "~13"
   },
   "scripts": {
     "test": "make check"
   },
   "files": [
-    "index.js",
-    "lib"
+    "index.js"
   ]
 }
