@@ -1,8 +1,5 @@
-var enc36 = require('../');
-
-var encode = enc36.encode;
-var decode = enc36.decode;
-
+const { describe, it } = require('node:test');
+const { encode, decode } = require('../');
 
 var data = [
   -118.4799, 33.7973,
