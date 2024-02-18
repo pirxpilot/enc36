@@ -25,7 +25,6 @@
     "test": "make check"
   },
   "files": [
-    "index.js",
-    "lib"
+    "index.js"
   ]
 }
