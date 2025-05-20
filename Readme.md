@@ -14,7 +14,7 @@ $ npm install --save enc36
 ## Usage
 
 ```js
-const { encode, decode } = require('enc36');
+import { encode, decode } from 'enc36';
 
 encode(array_of_ll);
 decode(encoded_string);
@@ -22,7 +22,7 @@ decode(encoded_string);
 
 ## License
 
-MIT © [Damian Krzeminski](https://code42day.com)
+MIT © [Damian Krzeminski](https://pirxpilot.me)
 
 [npm-image]: https://img.shields.io/npm/v/enc36
 [npm-url]: https://npmjs.org/package/enc36
