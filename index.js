@@ -17,8 +17,8 @@ function split(str, n) {
 }
 
 function decode(str) {
-  return split(str, LEN).map(function (s) {
-    s = parseInt(s, RADIX);
+  return split(str, LEN).map(s => {
+    s = Number.parseInt(s, RADIX);
     s /= PRECISION;
     s -= BASE;
     return s;
@@ -26,10 +26,12 @@ function decode(str) {
 }
 
 function encode(arr) {
-  return arr.map(function (c) {
-    c += BASE;
-    c *= PRECISION;
-    c = Math.round(c);
-    return c.toString(RADIX).padStart(LEN, '0');
-  }).join('');
+  return arr
+    .map(c => {
+      c += BASE;
+      c *= PRECISION;
+      c = Math.round(c);
+      return c.toString(RADIX).padStart(LEN, '0');
+    })
+    .join('');
 }
