@@ -1,8 +1,3 @@
-module.exports = {
-  encode,
-  decode
-};
-
 const BASE = 180;
 const PRECISION = 100000;
 const RADIX = 36;
@@ -16,7 +11,7 @@ function split(str, n) {
   return res;
 }
 
-function decode(str) {
+export function decode(str) {
   return split(str, LEN).map(s => {
     s = Number.parseInt(s, RADIX);
     s /= PRECISION;
@@ -25,7 +20,7 @@ function decode(str) {
   });
 }
 
-function encode(arr) {
+export function encode(arr) {
   return arr
     .map(c => {
       c += BASE;

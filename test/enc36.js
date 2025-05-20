@@ -1,5 +1,5 @@
-const test = require('node:test');
-const { encode, decode } = require('../');
+import test from 'node:test';
+import { decode, encode } from '../index.js';
 
 const data = [
   -118.4799, 33.7973, -113.5231, 37.0159, 113.9094, -37.0159, 113.4587,
