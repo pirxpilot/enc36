@@ -1,6 +1,5 @@
 [![NPM version][npm-image]][npm-url]
 [![Build Status][build-image]][build-url]
-[![Dependency Status][deps-image]][deps-url]
 
 # enc36
 
@@ -30,6 +29,3 @@ MIT © [Damian Krzeminski](https://code42day.com)
 
 [build-url]: https://github.com/pirxpilot/enc36/actions/workflows/check.yaml
 [build-image]: https://img.shields.io/github/actions/workflow/status/pirxpilot/enc36/check.yaml?branch=main
-
-[deps-image]: https://img.shields.io/librariesio/release/npm/enc36
-[deps-url]: https://libraries.io/npm/enc36
