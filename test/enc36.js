@@ -1,4 +1,4 @@
-const { describe, it } = require('node:test');
+const test = require('node:test');
 const { encode, decode } = require('../');
 
 const data = [
@@ -8,26 +8,27 @@ const data = [
 
 const str = '3nux6cq8pe3yhe2cx51yhhy708igq2hgzf25j5qaapsw0apsw000000lfls0';
 
-describe('enc36', () => {
-  it('must encode empty Array', () => {
-    encode([]).should.eql('');
-  });
+test('must encode empty Array', t => {
+  t.assert.equal(encode([]), '');
+});
 
-  it('must decode empty String', () => {
-    decode('').should.eql([]);
-  });
+test('must decode empty String', t => {
+  t.assert.deepEqual(decode(''), []);
+});
 
-  it('must encode Array of numbers', () => {
-    encode(data).should.eql(str);
-  });
+test('must encode Array of numbers', t => {
+  t.assert.equal(encode(data), str);
+});
 
-  it('must decode String', () => {
-    const d = decode(str);
+test('must decode String', t => {
+  const d = decode(str);
 
-    d.should.have.length(data.length);
+  t.assert.equal(d.length, data.length);
 
-    d.forEach((elem, i) => {
-      elem.should.approximately(data[i], 0.000001);
-    });
+  d.forEach((elem, i) => {
+    t.assert.ok(
+      Math.abs(elem - data[i]) < 0.000001,
+      `${elem} should be approximately ${data[i]}`
+    );
   });
 });
