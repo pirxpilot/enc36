@@ -1,38 +1,34 @@
-const { describe, it } = require('node:test');
-const { encode, decode } = require('../');
+import test from 'node:test';
+import { decode, encode } from '../index.js';
 
 const data = [
-  -118.4799, 33.7973,
-  -113.5231, 37.0159,
-  113.9094, -37.0159,
-  113.4587, -87.0803,
-  0, 0,
-  -180, 180
+  -118.4799, 33.7973, -113.5231, 37.0159, 113.9094, -37.0159, 113.4587,
+  -87.0803, 0, 0, -180, 180
 ];
 
 const str = '3nux6cq8pe3yhe2cx51yhhy708igq2hgzf25j5qaapsw0apsw000000lfls0';
 
-describe('enc36', function () {
-  it('must encode empty Array', function () {
-    encode([]).should.eql('');
+test('must encode empty Array', t => {
+  t.assert.equal(encode([]), '');
+});
+
+test('must decode empty String', t => {
+  t.assert.deepEqual(decode(''), []);
+});
+
+test('must encode Array of numbers', t => {
+  t.assert.equal(encode(data), str);
+});
+
+test('must decode String', t => {
+  const d = decode(str);
+
+  t.assert.equal(d.length, data.length);
+
+  d.forEach((elem, i) => {
+    t.assert.ok(
+      Math.abs(elem - data[i]) < 0.000001,
+      `${elem} should be approximately ${data[i]}`
+    );
   });
-
-  it('must decode empty String', function () {
-    decode('').should.eql([]);
-  });
-
-  it('must encode Array of numbers', function () {
-    encode(data).should.eql(str);
-  });
-
-  it('must decode String', function () {
-    const d = decode(str);
-
-    d.should.have.length(data.length);
-
-    d.forEach(function (elem, i) {
-      elem.should.approximately(data[i], 0.000001);
-    });
-  });
-
 });

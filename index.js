@@ -1,8 +1,3 @@
-module.exports = {
-  encode,
-  decode
-};
-
 const BASE = 180;
 const PRECISION = 100000;
 const RADIX = 36;
@@ -16,20 +11,22 @@ function split(str, n) {
   return res;
 }
 
-function decode(str) {
-  return split(str, LEN).map(function (s) {
-    s = parseInt(s, RADIX);
+export function decode(str) {
+  return split(str, LEN).map(s => {
+    s = Number.parseInt(s, RADIX);
     s /= PRECISION;
     s -= BASE;
     return s;
   });
 }
 
-function encode(arr) {
-  return arr.map(function (c) {
-    c += BASE;
-    c *= PRECISION;
-    c = Math.round(c);
-    return c.toString(RADIX).padStart(LEN, '0');
-  }).join('');
+export function encode(arr) {
+  return arr
+    .map(c => {
+      c += BASE;
+      c *= PRECISION;
+      c = Math.round(c);
+      return c.toString(RADIX).padStart(LEN, '0');
+    })
+    .join('');
 }

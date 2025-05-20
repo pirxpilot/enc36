@@ -4,10 +4,15 @@
   "description": "Encode/decode array of Numbers into shorter String representation.",
   "author": {
     "name": "Damian Krzeminski",
-    "email": "pirxpilot@code42day.com",
-    "url": "https://code42day.com"
+    "email": "pirxpilot@furkot.com",
+    "url": "https://pirxpilot.me"
   },
-  "repository": "github:pirxpilot/enc36",
+  "type": "module",
+  "exports": "./index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pirxpilot/enc36.git"
+  },
   "license": "MIT",
   "keywords": [
     "enc36",
@@ -16,10 +21,8 @@
     "number",
     "radix"
   ],
-  "dependencies": {},
   "devDependencies": {
-    "@pirxpilot/jshint": "~3",
-    "should": "~13"
+    "@biomejs/biome": "^1.9.4"
   },
   "scripts": {
     "test": "make check"
